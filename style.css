@@ -137,7 +137,9 @@ body{
 } 
 .header__navigation{
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
     align-items: center;
     margin-left: 16px;
     margin-bottom: 24px;
@@ -145,8 +147,7 @@ body{
   
 }
 .header__navigation::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+display: none;
 }
 
 
@@ -184,10 +185,6 @@ body{
 
 /* ОСНОВНОЙ КОНТЕНТ */
 
-.main{
-    max-width: max-content;
-}
-
 .main__container{
     display: flex;
     flex-wrap: wrap;
@@ -197,13 +194,14 @@ body{
 .main__article{
     overflow: hidden;
     font-family: 'TT Lakes Light', serif;
-    max-height: 90px;
+    max-height: 89px;
     font-size: 14px;
     line-height: 18px;
     color: #1B1C21;
     margin-left: 16px;
     margin-right: 16px;
-    max-width: 280px;
+    max-width: 490px;
+
 }
 .main__article p:first-child {
   margin-top: 0;
@@ -224,8 +222,8 @@ body{
 }
 
 .main__img{
-    width: 320px;
-    height: 176px;
+    width: 100%;
+    max-width: 490px;
 }
 
 
@@ -281,13 +279,12 @@ body{
     justify-content: space-around;
     align-items: flex-start;
     margin-left: 24px;
+    gap: 48px;
 }
-.main__container{
-    margin-right: 48px;
-}
+
     .main__article{
     max-height: 154px;
-    max-width: 312px;
+    min-width: 312px;
     line-height: 20px;
     margin-left: 0;
 }
@@ -295,9 +292,12 @@ body{
     margin-left: 0
 }
     .main__img{
-    width: 360px;
-    height: 208px;
+    min-width: 360px;
+    width: 100%;
+    max-width: 530px;
+    height: auto;
     border-radius: 10px;
+    margin-right: 25px;
 }
     
 }
@@ -357,12 +357,10 @@ body{
 .main{
     display: flex;
     margin-left: 34px;
+    gap: 36px;
     
 }
 
-.main__container{
-    margin-right: 36px;
-}
  .main__article{
     max-height: 160px;
     max-width: 490px;
