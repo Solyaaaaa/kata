@@ -103,7 +103,7 @@ body{
 .title{
     font-family: 'TT Lakes B', sans-serif;
     font-size: 28px;
-    padding-left: 3vw;
+    padding-left: 12px;
 
 }
 
@@ -241,6 +241,9 @@ body{
 .header__line-mob::before{
     display: none;
 }
+.title{
+    padding-left: 20px;
+}
 .header__button-right{
     flex-direction: row-reverse
 }
@@ -270,6 +273,7 @@ body{
     
 }
 .header__navigation{
+     margin-left: 24px;
      margin-bottom: 24px;
 }
     .main{
@@ -278,10 +282,17 @@ body{
     align-items: flex-start;
     margin-left: 24px;
 }
+.main__container{
+    margin-right: 48px;
+}
     .main__article{
     max-height: 154px;
     max-width: 312px;
     line-height: 20px;
+    margin-left: 0;
+}
+.main__button{
+    margin-left: 0
 }
     .main__img{
     width: 360px;
@@ -299,13 +310,17 @@ body{
 .header__menu{
     display: none;
 }
+.title{
+    padding-left: 30px;
+}
 .header__title{
-    margin-top: 42px;
+    margin-top: 32px;
 }
 .header__button-right-copy{
     display: flex;
     flex-direction: row-reverse;
     margin-left: auto;
+    gap: 32px;
 }
  .header__button-name{
     display: inline-flex;
@@ -320,7 +335,7 @@ body{
     background-color: transparent;
     cursor: pointer;
     align-items: center;
-    padding-right: 32px;
+    padding-right: 10px;
 }
 .header__button-left,
 .header__button-center{
@@ -336,15 +351,26 @@ body{
      margin-left: 32px;
      margin-bottom: 16px;
 }
+.header__nav-wrapper::after{
+    display: none;
+}
 .main{
     display: flex;
     margin-left: 34px;
     
 }
+
+.main__container{
+    margin-right: 36px;
+}
  .main__article{
     max-height: 160px;
     max-width: 490px;
     line-height: 20px;
+    margin-left: 0;
+}
+.main__button{
+    margin-left: 0
 }
     .main__img{
     width: 535px;
