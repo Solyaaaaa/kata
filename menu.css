@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('TTLakes/TTLakes-Regular.eot');
+    src: local('TT Lakes Regular'), local('TTLakes-Regular'),
+        url('TTLakes/TTLakes-Regular.eot?#iefix') format('embedded-opentype'),
+        url('TTLakes/TTLakes-Regular.woff') format('woff'),
+        url('TTLakes/TTLakes-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} 
+@font-face {
+    font-family: 'TT Lakes B';
+    src: url('TTLakes/TTLakes-Bold.eot');
+    src: local('TT Lakes Bold'), local('TTLakes-Bold'),
+        url('TTLakes/TTLakes-Bold.eot?#iefix') format('embedded-opentype'),
+        url('TTLakes/TTLakes-Bold.woff') format('woff'),
+        url('TTLakes/TTLakes-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'TT Lakes', sans-serif;
+    font-weight: 500;
+}
+a {
+    display: flex;
+    text-decoration: none;
+    color: #1B1C21;
+    padding-left: 24px;
+    height: 32px;
+    align-items: center;
+}
+button {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: 'TT Lakes', sans-serif;
+}
+
+
+/* Контейнер */
+
+
+.menu {
+
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    width: 320px;
+    height: 100vh;
+    box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2);
+    background-color: #FFFFFF;
+}
+
+
+/* Шапка */
+
+.header {
+    display: flex;
+    margin: 23px 24px 50px;
+    align-items: center;
+    gap:16px;
+}
+.header__button:last-child{
+    margin-left: auto;
+}
+
+
+/* Навигация(ссылки) */
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    font-size: 16px;
+
+}
+.main__navigation{
+    position: relative;
+    transition: color 0.5s;
+}
+.main__navigation:hover{
+  
+    padding-left: 0px;
+    color: #7E7E82;
+    
+}
+.main__navigation:hover::before{
+
+    content: '';
+    display: block;
+    border-right: 4px solid #41F6D7;
+    height: 32px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-right: 20px;
+
+
+}
+
+
+/* Подвал */
+
+
+.footer{
+    margin-top: auto;
+}
+.footer__btn {
+    display: flex;
+    gap: 16px;
+    margin-left: 24px;
+    margin-bottom: 16px;
+}
+
+.footer__contact{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer__number{
+    font-family: 'TT Lakes B', sans-serif;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+.footer__lang{
+    display: flex;
+    gap: 7px;
+    margin-left: 24px;
+    margin-bottom: 32px;
+    font-size: 16px;
+    font-family: 'TT Lakes', sans-serif;
+    
+    
+}
+
+
+.footer__lang-hover{
+    transition: opacity 0.3s ease;
+}
+.footer__lang-hover:hover {
+    opacity: 0.5;
+}

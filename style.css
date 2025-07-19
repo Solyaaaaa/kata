@@ -1,5 +1,8 @@
 /* ШРИФТЫ */
 
+*{
+    box-sizing: border-box;
+}
 @font-face {
     font-family: 'TT Lakes';
     src: url('TTLakes/TTLakes-Regular.eot');
