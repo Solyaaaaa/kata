@@ -137,14 +137,15 @@ button {
     margin-bottom: 32px;
     font-size: 16px;
     font-family: 'TT Lakes', sans-serif;
+    color: #1B1C21;
     
     
 }
 
 
-.footer__lang-hover{
+.button--animation {
     transition: opacity 0.3s ease;
 }
-.footer__lang-hover:hover {
+.button--animation:hover {
     opacity: 0.5;
 }
