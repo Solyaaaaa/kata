@@ -1,5 +1,8 @@
 # Проекты
 
+## Практическая задача 2.1.3 — реализация слайдера
+[Смотреть меню](https://solyaaaaa.github.io/kata/brands.html)
+
 ## Практическая задача 1.1.3 — реализация меню
 [Смотреть меню](https://solyaaaaa.github.io/kata/menu.html)
 
