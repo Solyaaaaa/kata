@@ -30,7 +30,6 @@ h2{
 .header {
 
 height: 80px;
-width: 100vw;
 border-top: 1px solid #41F6D7;
 background: linear-gradient(to left,  rgba(248, 248, 248, 1),rgba(255, 255, 255, 1));
 }
@@ -51,15 +50,18 @@ background: linear-gradient(to left,  rgba(248, 248, 248, 1),rgba(255, 255, 255,
     padding: 0;
     margin: 0;
     transition: opacity 0.3s ease;
+    cursor: pointer;
     
 }
 .swiper__button:hover,
 .brands__button:hover{
     opacity: 0.5;
 }
-.button-hide{
-    display: none;
+.swiper__button:active,
+.brands__button:active{
+    opacity: 0.5;
 }
+
 @media (max-width: 768px){
 
 
@@ -118,7 +120,7 @@ background: linear-gradient(to left,  rgba(248, 248, 248, 1),rgba(255, 255, 255,
 }
 .brands__wrapper{
     display: none;
-}
+} 
 .button{
     display: none;
 }
@@ -143,9 +145,16 @@ background: linear-gradient(to left,  rgba(248, 248, 248, 1),rgba(255, 255, 255,
     column-gap: 24px;
     margin: 0 24px;
     overflow: hidden;
-    height: 177px;
+    
 
   }
+
+.logo__img {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+}
+
   .brands__card {
     width: 224px;
     height: 72px;
