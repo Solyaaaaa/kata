@@ -55,6 +55,33 @@ if( wrapperBrands.offsetWidth > WIDTH_WRAPPER){
     insertCards(AVG_NUMBER_OF_ELEMENTS)
 }
 
+const showAll = () => {
+    wrapperBrands.innerHTML = ''
+ 
+    insertCards(MAX_NUMBER_OF_ELEMENTS);
+  
+    buttonSpan.textContent = 'Скрыть';
+    buttonImg.src = 'brands_img/ic/expand2.png';
+    button.addEventListener('click', hideAll);
+    button.removeEventListener('click', showAll)
+
+    return undefined;
+}
+
+const hideAll = () => {
+    wrapperBrands.innerHTML = ''
+
+    insertCards(checkNumberOfelements(wrapperBrands.offsetWidth));
+
+    buttonSpan.textContent = 'Показать все';
+    buttonImg.src = 'brands_img/ic/expand.png';
+    button.addEventListener('click', showAll);
+    button.removeEventListener('click', hideAll)
+
+}
+
+
+button.addEventListener('click', showAll);
 
 
 window.addEventListener('resize', function() {
@@ -67,14 +94,4 @@ window.addEventListener('resize', function() {
 
 });
 
-button.addEventListener('click', () => {
-   flag = !flag;
-   wrapperBrands.innerHTML = ''
- 
-   flag ? insertCards(MAX_NUMBER_OF_ELEMENTS) : insertCards(checkNumberOfelements(wrapperBrands.offsetWidth));
-  
-   buttonSpan.textContent = flag ? 'Скрыть' : 'Показать все';
-   buttonImg.src = flag ? 'brands_img/ic/expand2.png' : 'brands_img/ic/expand.png';
-
-  });
 
