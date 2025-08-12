@@ -11,7 +11,8 @@ module.exports = {
 
   // Выходной файл
   output: {
-    filename: './js/bundle.js'
+    filename: './js/bundle.js',
+    path: path.resolve(__dirname, 'dist'), 
   },
 
   // Source maps для удобства отладки
@@ -62,6 +63,12 @@ module.exports = {
           },
         ]
       },
+
+           {
+            test: /\.css$/i,
+            use: [MiniCssExtractPlugin.loader, 'css-loader'],
+          },
+
     ],
   },
   plugins: [
@@ -90,3 +97,5 @@ module.exports = {
     ])
   ],
 };
+
+

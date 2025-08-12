@@ -1,17 +1,413 @@
-$bgColor: #24292e;
-$text: #fff;
+
+
+
+/* ШРИФТЫ */
 
 @font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+    font-family: 'TT Lakes';
+    src: url('../fonts/TTLakes/TTLakes-Regular.eot');
+    src: local('TT Lakes Regular'), local('TTLakes-Regular'),
+        url('../fonts/TTLakes/TTLakes-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTLakes/TTLakes-Regular.woff') format('woff'),
+        url('../fonts/TTLakes/TTLakes-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} 
+@font-face {
+    font-family: 'TT Lakes B';
+    src: url('../fonts/TTLakes/TTLakes-Bold.eot');
+    src: local('../fonts/TT Lakes Bold'), local('TTLakes-Bold'),
+        url('../fonts/TTLakes/TTLakes-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTLakes/TTLakes-Bold.woff') format('woff'),
+        url('../fonts/TTLakes/TTLakes-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TT Lakes Light';
+    src: url('../fonts/TTLakes/TTLakes-Light.eot');
+    src: local('../fonts/TT Lakes Light'), local('TTLakes-Light'),
+        url('../fonts/TTLakes/TTLakes-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTLakes/TTLakes-Light.woff') format('woff'),
+        url('../fonts/TTLakes/TTLakes-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
 }
 
-body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
-  color: $text;
+
+.body{
+    font-family: 'TT Lakes', serif;
+    margin: 0;
+    background-color: #F8F8F8;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
 }
+
+
+/* МЕНЮ (кнопки)*/
+
+.header__menu{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    border-bottom: 1px solid #D9FFF5;
+    height: 88px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: #FFFFFF;
+    margin-bottom: 24px;
+}
+
+.header__line-mob::before{
+    content: '';
+    display: block;
+    width: 2px;
+    height: 32px;
+    background-color: #EAEAEA;
+    margin-right: 20px;
+
+    
+}
+
+.header__button-left,
+.header__button-right{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.header__button-center{
+    display: none;
+}
+
+
+.header__button{
+    display: flex;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    align-items: center;
+    transition: opacity 0.3s ease;
+
+}
+.header__button:active{
+    opacity: 0.5;
+}
+.header__button:hover{
+    opacity: 0.5;
+}
+
+.header__button-right-copy{
+    display: none;
+}
+
+
+/* Главный заголовок */
+
+.header__title{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 24px;
+}
+.title{
+    font-family: 'TT Lakes B', sans-serif;
+    font-size: 28px;
+    padding-left: 12px;
+
+}
+
+.header__title::before{
+    content: '';
+    display: block;
+    border-right: 4px solid #41F6D7;
+    height: 40px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+
+/* Навигация на странице */
+
+
+ .header__nav-wrapper{
+  
+  position: relative;
+
+}
+.header__nav-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(to left,  rgba(248, 248, 248, 1), rgba(248, 248, 248, 0.1));
+} 
+.header__navigation{
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    align-items: center;
+    margin-left: 16px;
+    margin-bottom: 24px;
+    scrollbar-width: none;
+  
+}
+.header__navigation::-webkit-scrollbar {
+display: none;
+}
+
+
+.header__navigation-link{
+    display: flex;
+    font-family: 'TT Lakes', serif;
+    cursor: pointer;
+    color: #7E7E82;
+    font-size: 16px;
+    height: 40px;
+    align-items: center;
+    white-space: nowrap; 
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 2px solid transparent;
+    text-decoration: none
+    
+}
+
+
+.header__navigation-link:hover{
+    border: 2px solid #B8FFEC;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+   
+}
+.header__navigation-link:active{
+    border: 2px solid #B8FFEC;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+   
+}
+
+
+
+/* ОСНОВНОЙ КОНТЕНТ */
+.main{
+    margin-bottom: 24px;
+}
+.main__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.main__article{
+    overflow: hidden;
+    font-family: 'TT Lakes Light', serif;
+    max-height: 89px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #1B1C21;
+    margin-left: 16px;
+    margin-right: 16px;
+    max-width: 490px;
+
+}
+.main__article p:first-child {
+  margin-top: 0;
+}
+
+.main__button{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    margin-left: 10px;
+    align-items: center;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    gap: 8px;
+}
+
+.main__img{
+    width: 100%;
+    max-width: 490px;
+}
+
+
+
+
+
+/* МЕДИАЗАПРОСЫ */
+
+/* Размер экрана 768px */
+
+
+@media (min-width: 768px){
+.header__line-mob::before{
+    display: none;
+}
+.title{
+    padding-left: 20px;
+}
+.header__button-right{
+    flex-direction: row-reverse
+}
+.header__button-center{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+    padding-right: 16px;
+}
+.header__button-center::after{
+    content: '';
+    display: block;
+    width: 2px;
+    height: 32px;
+    background-color: #EAEAEA;
+
+}
+
+.header__line-laptop::after{
+    content: '';
+    display: block;
+    width: 2px;
+    height: 32px;
+    background-color: #EAEAEA;
+    margin-left: 20px;
+    
+}
+.header__navigation{
+     margin-left: 24px;
+     margin-bottom: 24px;
+}
+    .main{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-left: 24px;
+    gap: 48px;
+    margin-bottom: 32px;
+}
+
+    .main__article{
+    max-height: 154px;
+    min-width: 312px;
+    line-height: 20px;
+    margin-left: 0;
+}
+.main__button{
+    margin-left: 0
+}
+    .main__img{
+    min-width: 360px;
+    width: 100%;
+    max-width: 530px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 25px;
+}
+    
+}
+
+
+
+/* Размер экрана 1120px */
+
+@media (min-width: 1366px){
+.body{
+    flex-direction: row-reverse;
+
+    }
+.header__menu{
+    display: none;
+}
+.title{
+    padding-left: 30px;
+}
+.header__title{
+    margin-top: 32px;
+}
+.header__button-right-copy{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-left: auto;
+    gap: 32px;
+}
+ .header__button-name{
+    display: inline-flex;
+    padding-right: 8px;
+    font-family: 'TT Lakes' ,sans-serif ;
+    font-size: 16px;
+}
+.header__button-copy{
+    display: flex;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    align-items: center;
+    padding-right: 10px;
+    transition: opacity 0.3s ease;
+}
+.header__button-copy:hover{
+    opacity: 0.5;
+}
+.header__button-copy:active{
+    opacity: 0.5;
+}
+.header__button-left,
+.header__button-center{
+    display: none;
+}
+
+.header__navigation-link{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.header__navigation{
+     flex-wrap: wrap;
+     margin-left: 32px;
+     margin-bottom: 16px;
+}
+.header__nav-wrapper::after{
+    display: none;
+}
+.main{
+    display: flex;
+    margin-left: 34px;
+    gap: 36px;
+    margin-bottom: 50px;
+    
+}
+
+ .main__article{
+    max-height: 160px;
+    max-width: 490px;
+    line-height: 20px;
+    margin-left: 0;
+}
+.main__button{
+    margin-left: 0
+}
+    .main__img{
+    width: 535px;
+    height: 310px;
+    
+}
+}
+
+@import './menu';
+@import './brands';
+@import './devices';
+@import './prices';
+@import './footer';
+@import './feedback';

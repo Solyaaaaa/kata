@@ -1,0 +1,217 @@
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('../fonts/TTLakes/TTLakes-Regular.eot');
+    src: local('TT Lakes Regular'), local('TTLakes-Regular'),
+        url('../fonts/TTLakes/TTLakes-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTLakes/TTLakes-Regular.woff') format('woff'),
+        url('../fonts/TTLakes/TTLakes-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} 
+@font-face {
+    font-family: 'TT Lakes B';
+    src: url('../fonts/TTLakes/TTLakes-Bold.eot');
+    src: local('TT Lakes Bold'), local('TTLakes-Bold'),
+        url('../fonts/TTLakes/TTLakes-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTLakes/TTLakes-Bold.woff') format('woff'),
+        url('../fonts/TTLakes/TTLakes-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+a {
+    display: flex;
+    text-decoration: none;
+    color: #1B1C21;
+    padding-left: 24px;
+    height: 32px;
+    align-items: center;
+}
+button {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: 'TT Lakes', sans-serif;
+    
+}
+
+
+/* Контейнер */
+
+.menu {
+
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    width: 100%;
+    max-width: 360px;
+    height: 100vh;
+    box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2);
+    background-color: #FFFFFF;
+    position: fixed;
+    top:0;
+    left: 0;
+    transform: translateX(-110%);
+    transition: transform 0.4s ease;
+    z-index: 100;
+}
+
+.menu.active {
+  transform: translateX(0);
+}
+
+.overlay,
+.feedback__overlay,
+.callback__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  pointer-events: none; 
+  transition: opacity 0.3s ease;
+  z-index: 99; 
+
+}
+
+
+.overlay.active,
+.feedback__overlay.active,
+.callback__overlay.active {
+  opacity: 1;
+  pointer-events: auto; 
+}
+
+/* Шапка */
+
+.menu__header {
+    display: flex;
+    margin: 23px 24px 50px;
+    align-items: center;
+    gap:16px;
+}
+.menu__header-button:last-child{
+    margin-left: auto;
+}
+
+
+/* Навигация(ссылки) */
+
+.menu__main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    font-size: 16px;
+
+}
+.main__navigation{
+    position: relative;
+    transition: color 0.5s;
+}
+.main__navigation:hover,
+.main__navigation:active{
+  
+    padding-left: 0px;
+    color: #7E7E82;
+    
+}
+.main__navigation:hover::before,
+.main__navigation:active::before{
+
+    content: '';
+    display: block;
+    border-right: 4px solid #41F6D7;
+    height: 32px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-right: 20px;
+
+
+}
+
+
+/* Подвал */
+
+
+.footer__wrapper{
+    margin-top: auto;
+}
+.footer__btn {
+    display: flex;
+    gap: 16px;
+    margin-left: 24px;
+    margin-bottom: 16px;
+}
+
+.footer__contact{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer__number{
+    font-family: 'TT Lakes B', sans-serif;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+.footer__lang{
+    display: flex;
+    gap: 7px;
+    margin-left: 24px;
+    margin-bottom: 32px;
+    font-size: 16px;
+    font-family: 'TT Lakes', sans-serif;
+    color: #1B1C21;
+    
+    
+}
+
+
+.button--animation {
+    transition: opacity 0.3s ease;
+}
+.button--animation:hover {
+    opacity: 0.5;
+}
+
+/* До 1120px — меню выезжает */
+@media (max-width: 1366px) {
+  .menu {
+    position: fixed;
+    
+  }
+}
+
+/* От 1120px — меню статично слева, без анимации */
+@media (min-width: 1366px) {
+.sidebar{
+    width: 320px;
+    max-height: 2200px;
+}
+.aside{
+    width: 320px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+}
+  .menu{
+    position: static;
+    box-shadow: none;
+    height: 900px;
+    z-index: 10;
+    transform: translateX(0);
+    margin-right: auto;
+  }
+  .menu__button-closed{
+    display: none;
+  }
+
+  .overlay {
+    display: none;
+  }
+}
