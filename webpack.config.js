@@ -47,11 +47,12 @@ module.exports = {
       // Подключаем шрифты из css
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        use: [
-          {
-            loader: 'file-loader?name=./fonts/[name].[ext]'
-          },
-        ]
+        use: ['url-loader?limit=100000'],
+        // use: [
+        //   {
+        //     loader: 'file-loader?name=style/fonts/[name].[ext]'
+        //   },
+        // ]
       },
 
       // Подключаем картинки из css
@@ -85,7 +86,7 @@ module.exports = {
 
     // Кладем стили в отдельный файлик
     new MiniCssExtractPlugin({
-      filename: 'style.css',
+      filename: 'style/style.css',
     }),
 
     // Копируем картинки

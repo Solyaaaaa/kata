@@ -6,6 +6,6 @@ import './prices.js';
 import './menu.js'
 import './feedback.js'
 import './callback.js'
-import '../scss/style.scss'; 
+import '../style/style.scss'; 
 
 
